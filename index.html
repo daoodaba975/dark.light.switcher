@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Light/Dark</title>
+</head>
+<body>
+<header>
+	<label id="dark-change"></label>
+
+<style>
+body {
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+}
+main {
+	margin: Svh 15%;
+		align-content: center;
+	align-items: center;
+}
+h1 {
+	font-size: 40px;
+	font-weight: 400;
+	text-align: center;
+}
+
+label {
+	position: absolute;
+	width: 45px;
+	height: 22px;
+	right: 20px;
+	top: 20px;
+	border: 2px solid;
+	border-radius: 20px;
+}
+label:before {
+	position: absolute;
+	content: "";
+	width: 20px;
+	height: 20px;
+	left: 1px;
+	top: 1px;
+	border-radius: 50%;
+	cursor: pointer;
+	background: #000;
+	transition: 0.4s;
+}
+label.active:before {
+	left: 24px;
+	background: #fff;
+}
+body.night {
+	background: #000;
+	color: #fff;
+	transition: 0.5s;
+}
+</style>
+</header>
+<main>
+	<h1>Light/Dark mode switch</h1>
+</main>
+<script>
+var content = document.getElementsByTagName('body')[0];
+var darkMode = document.getElementById('dark-change');
+darkMode.addEventListener('click', function() {
+		darkMode.classList.toggle('active');
+		content.classList.toggle('night');
+})
+</script>
+</body>
+</html>
